@@ -1,14 +1,18 @@
 var res = {
-   player_sheet: "res/playerSheet_96x192.png",
-   player_plist: "res/player.plist",
-   player01_png: "res/player01_96x96.png",
-   player02_png: "res/player02_96x96.png",
-   ground_png: "res/ground_96x96.png",
-   background_png: "res/background01.jpg",
-   block_png: "res/block.png",
+   player_sheet:"res/sir_awesome_frames.png",
+   background_front_png: "res/background_front.png",
+   background_back_png: "res/background_back.png",
+   background_front_png: "res/background_front.png",
+   block_png: "res/block48X48.png",
    bat_frames: "res/bat_frames.png",
    leftbutton_png: "res/leftbutton.png",
    rightbutton_png: "res/rightbutton.png",
+   player_plist: "res/player.plist",
+   curtain_png:"res/curtain.png",
+   ui_panels_png:"res/ui_panels.png",
+   zombie_frames: "res/zombie_frames.png",
+   zombie_plist: "res/zombie.plist",
+
 
 };
 
