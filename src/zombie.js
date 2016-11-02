@@ -50,7 +50,7 @@ var Zombie = cc.Sprite.extend({
         animationframe.push(frame8);
 
         //スプライトフレームの配列を連続再生するアニメーションの定義
-        var animation = new cc.Animation(animationframe, 0.09);
+        var animation = new cc.Animation(animationframe, 0.15);
         //永久ループのアクションを定義
         var action = new cc.RepeatForever(new cc.animate(animation));
         //実行
@@ -63,10 +63,22 @@ var Zombie = cc.Sprite.extend({
     update: function(dt) {
         this.FrameCount++;
         //4フレームに1回　ゾンビの移動計算する
-        if (this.FrameCount % 4 == 0) {
+        if (this.FrameCount % 10 == 0) {
             //プレイヤーの位置をゾンビの位置の差を計算
             var offset_x = player.getPosition().x - this.getPosition().x;
-            var offset_y = player.getPosition().y - this.getPosition().y;
+
+            var velocity_x = lerp(this.velocity.x, offset_x,0.001);
+            this.velocity.x = velocity_x;
+
+            if (this.velocity.x <= 0)
+                this.setFlippedX(true);
+            if (this.velocity.x > 0)
+                this.setFlippedX(false);
+            this.setPosition(this.getPosition().x + this.velocity.x, this.getPosition().y);
         }
     }
 });
+//始点、終点、の間で 0～1.0の割合の位置を返す関数
+function lerp(fStart, fEnd, fPercent) {
+    return fStart + ((fEnd - fStart) * fPercent);
+}

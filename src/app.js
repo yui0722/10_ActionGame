@@ -1,12 +1,12 @@
 var size;
-//1:地面　2:ブロック　3:プレイヤ　4:ゾンビ 5:こうもり
+//1:地面　2:ブロック　3:プレイヤ　4:ゾンビ 5:こうもり 6:コイン 7:スライム(緑)
 var level = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 5, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 2, 2, 2],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [0, 0, 0, 0, 0, 0, 2, 2, 2, 0],
+    [0, 6, 6, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 2, 2, 2, 0, 0, 0, 0],
-    [0, 0, 0, 0, 3, 0, 0, 0, 4, 0],
+    [0, 7, 0, 0, 3, 0, 0, 8, 4, 0],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 var tileSize = 96;
@@ -33,8 +33,18 @@ var gameScene = cc.Scene.extend({
         this.addChild(enemys);
         var zombie = new zombieLayer();
         this.addChild(zombie);
-      //  var curtain = new curtainLayer();
-      //  this.addChild(curtain);
+        var coins = new coinsLayer();
+        this.addChild(coins);
+        var slime = new slimeLayer();
+        this.addChild(slime);
+        var slime_yellow = new slime_yellow_Layer();
+        this.addChild(slime_yellow);
+        var Lcurtain = new LcurtainLayer();
+        this.addChild(Lcurtain);
+        var Rcurtain = new RcurtainLayer();
+        this.addChild(Rcurtain);
+        var ui_panels = new ui_panelsLayer();
+        this.addChild(ui_panels);
     }
 });
 
@@ -52,25 +62,53 @@ var backgroundLayer = cc.Layer.extend({
         //背景画像を画面の大きさに合わせるためのScaling処理
         backgroundSprite.setScale(winSize.width / size.width, winSize.height / size.height);
     }
-
 });
-/*
-var curtainLayer = cc.Layer.extend({
+
+var ui_panelsLayer = cc.Layer.extend({
     ctor: function() {
         this._super();
 
-        var curtainSprite = cc.Sprite.create(res.curtain_png);
-        var size = curtainSprite.getContentSize();
+        var ui_panelsSprite = cc.Sprite.create(res.ui_panels_png);
+        var size = ui_panelsSprite.getContentSize();
         //console.log(size);
-        this.addChild(curtainSprite);
+        this.addChild(ui_panelsSprite);
         //console.log(winSize.width,winSize.height);
-        curtainSprite.setPosition(winSize.width / 2, winSize.height / 2);
+        ui_panelsSprite.setPosition(winSize.width / 2, winSize.height/ 0.9);
+    }
+});
+
+//左カーテン
+var LcurtainLayer = cc.Layer.extend({
+    ctor: function() {
+        this._super();
+        var LcurtainSprite = cc.Sprite.create(res.curtain_png);
+        var size = LcurtainSprite.getContentSize();
+        //console.log(size);
+        this.addChild(LcurtainSprite);
+        //console.log(winSize.width,winSize.height);
+        LcurtainSprite.setPosition(winSize.width / 7, winSize.height / 2);
         //背景画像を画面の大きさに合わせるためのScaling処理
-        curtainSprite.setScale(960 /2, 640 / size.height);
+        LcurtainSprite.setScale(1.2);
     }
 
 });
-*/
+
+//右カーテン
+var RcurtainLayer = cc.Layer.extend({
+    ctor: function() {
+        this._super();
+        var RcurtainSprite = cc.Sprite.create(res.curtain_png);
+        var size = RcurtainSprite.getContentSize();
+        RcurtainSprite.setFlippedX(true);
+        //console.log(size);
+        this.addChild(RcurtainSprite);
+        //console.log(winSize.width,winSize.height);
+        RcurtainSprite.setPosition(winSize.width - 120, winSize.height / 2);
+        //背景画像を画面の大きさに合わせるためのScaling処理
+        RcurtainSprite.setScale(1.2);
+    }
+});
+
 var levelLayer = cc.Layer.extend({
     ctor: function() {
         this._super();
@@ -93,7 +131,6 @@ var levelLayer = cc.Layer.extend({
         }
     }
 });
-
 
 var player;
 var playerLayer = cc.Layer.extend({
@@ -132,7 +169,6 @@ var playerLayer = cc.Layer.extend({
         cc.eventManager.addListener(keylistener, this);
 
     }
-
 });
 
 
@@ -154,52 +190,9 @@ var Player = cc.Sprite.extend({
                 }
             }
         }
-        //this.schedule(this.working,0.08);
-        /*
-          // 2.　SpriteFrame　を利用しての歩行アニメーション
-            //スプライトフレームを格納する配列
-            var animationframe = [];
-            //スプライトフレームを作成
-            var frame1 = new cc.SpriteFrame(res.player01_png, cc.rect(0, 0, 96, 96));
-            var frame2 = new cc.SpriteFrame(res.player02_png, cc.rect(0, 0, 96, 96));
-            //スプライトフレームを配列に登録
-            animationframe.push(frame1);
-            animationframe.push(frame2);
-            //スプライトフレームの配列を連続再生するアニメーションの定義
-            var animation = new cc.Animation(animationframe, 0.08);
-            //永久ループのアクションを定義
-            var action = new cc.RepeatForever(new cc.animate(animation));
-            //実行
-            this.runAction(action);
-        */
-
-        /*
-        //３．テクスチャーからスプライトフレームを切り出す方法
-        //スプライトフレームを格納する配列
-        var texture = cc.textureCache.addImage(res.player_sheet);
-        //スプライトフレームを作成
-        var frame1 = new cc.SpriteFrame.createWithTexture(texture, cc.rect(40, 385, 200, 125));
-        var frame2 = new cc.SpriteFrame.createWithTexture(texture, cc.rect(340, 385, 200, 125));
-        var frame3 = new cc.SpriteFrame.createWithTexture(texture, cc.rect(140, 385, 200, 125));
-        var frame4 = new cc.SpriteFrame.createWithTexture(texture, cc.rect(240, 385, 200, 125));
-        //スプライトフレームを配列に登録
-        var animationframe = [];
-        animationframe.push(frame1);
-        animationframe.push(frame2);
-        animationframe.push(frame3);
-        animationframe.push(frame4);
-        //スプライトフレームの配列を連続再生するアニメーションの定義
-        var animation = new cc.Animation(animationframe, 0.08);
-        //永久ループのアクションを定義
-        var action = new cc.RepeatForever(new cc.animate(animation));
-        //実行
-        this.runAction(action);
-        */
-
 
         // スプライトシートをキャッシュに登録
         cc.spriteFrameCache.addSpriteFrames(res.player_plist, res.player_sheet);
-
         // スプライトフレームを取得 player01,player02はplistの中で定義されいいる
         var frame1 = cc.spriteFrameCache.getSpriteFrame("player01");
         var frame2 = cc.spriteFrameCache.getSpriteFrame("player02");
