@@ -4,10 +4,10 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>slime_yellow01</key>
+            <key>slime_red01</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,0},{96,70}}</string>
+                <string>{{0,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -16,10 +16,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow02</key>
+            <key>slime_red02</key>
             <dict>
                 <key>frame</key>
-                <string>{{130,0},{96,70}}</string>
+                <string>{{130,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -28,10 +28,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow03</key>
+            <key>slime_red03</key>
             <dict>
                 <key>frame</key>
-                <string>{{255,0},{96,70}}</string>
+                <string>{{255,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -40,10 +40,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow04</key>
+            <key>slime_red04</key>
             <dict>
                 <key>frame</key>
-                <string>{{380,0},{96,70}}</string>
+                <string>{{380,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -51,22 +51,10 @@
                 <key>sourceSize</key>
                 <string>{96,96}</string>
             </dict>
-              <key>slime_yellow05</key>
+              <key>slime_red05</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,65},{96,70}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceSize</key>
-                <string>{96,96}</string>
-            </dict>
-            
-            <key>slime_yellow06</key>
-            <dict>
-                <key>frame</key>
-                <string>{{130,65},{96,70}}</string>
+                <string>{{0,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -75,10 +63,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow07</key>
+            <key>slime_red06</key>
             <dict>
                 <key>frame</key>
-                <string>{{255,65},{96,70}}</string>
+                <string>{{130,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -87,10 +75,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow08</key>
+            <key>slime_red07</key>
             <dict>
                 <key>frame</key>
-                <string>{{385,65},{96,70}}</string>
+                <string>{{255,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -99,10 +87,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow09</key>
+            <key>slime_red08</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,130},{96,70}}</string>
+                <string>{{385,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -111,10 +99,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow10</key>
+            <key>slime_red09</key>
             <dict>
                 <key>frame</key>
-                <string>{{130,130},{96,70}}</string>
+                <string>{{0,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -123,10 +111,10 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow11</key>
+            <key>slime_red10</key>
             <dict>
                 <key>frame</key>
-                <string>{{270,130},{96,70}}</string>
+                <string>{{130,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -135,10 +123,22 @@
                 <string>{96,96}</string>
             </dict>
             
-            <key>slime_yellow12</key>
+            <key>slime_red11</key>
             <dict>
                 <key>frame</key>
-                <string>{{390,130},{96,70}}</string>
+                <string>{{270,195},{96,70}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceSize</key>
+                <string>{96,96}</string>
+            </dict>
+            
+            <key>slime_red12</key>
+            <dict>
+                <key>frame</key>
+                <string>{{390,195},{96,70}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>

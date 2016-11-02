@@ -77,7 +77,7 @@ var Slime_red = cc.Sprite.extend({
             //プレイヤーの位置をスライムの位置の差を計算
             var offset_x = player.getPosition().x - this.getPosition().x;
 
-            var velocity_x = lerp(this.velocity.x, offset_x, 0.0008);
+            var velocity_x = lerp(this.velocity.x, offset_x, 0.003);
             this.velocity.x = velocity_x;
 
             if (this.velocity.x <= 0)

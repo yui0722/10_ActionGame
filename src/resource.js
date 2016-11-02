@@ -3,6 +3,7 @@ var res = {
     background_front_png: "res/background_front.png",
     background_back_png: "res/background_back.png",
     background_front_png: "res/background_front.png",
+    background_light_shafts_png: "res/background_light_shafts.png",
 
     block_png: "res/block48X48.png",
 
@@ -14,6 +15,7 @@ var res = {
     curtain_png: "res/curtain.png",
 
     ui_panels_png: "res/ui_panels.png",
+    ui_gauge_fill_png: "res/ui_gauge_fill.png",
 
     player_sheet: "res/sir_awesome_frames.png",
     player_plist: "res/player.plist",
@@ -29,6 +31,8 @@ var res = {
     slime_red_frames: "res/slime_red_frames.png",
     slime_yellow_plist: "res/slime_yellow.plist",
     slime_red_plist: "res/slime_red.plist",
+
+
 
 };
 

@@ -6,7 +6,7 @@ var level = [
     [0, 0, 0, 0, 0, 0, 2, 2, 2, 0],
     [0, 6, 6, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 2, 2, 2, 0, 0, 0, 0],
-    [0, 7, 0, 0, 3, 0, 0, 8, 4, 0],
+    [0, 7, 0, 0, 3, 0, 0, 8, 4, 9],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 var tileSize = 96;
@@ -25,6 +25,14 @@ var gameScene = cc.Scene.extend({
 
         var background = new backgroundLayer();
         this.addChild(background);
+        var background_light_shafts = new background_light_shaftsLayer();
+        this.addChild(background_light_shafts);
+        var Rcurtain = new RcurtainLayer();
+        this.addChild(Rcurtain);
+        var Lcurtain = new LcurtainLayer();
+        this.addChild(Lcurtain);
+        var ui_panels = new ui_panelsLayer();
+        this.addChild(ui_panels);
         var level = new levelLayer();
         this.addChild(level);
         var player = new playerLayer();
@@ -39,12 +47,10 @@ var gameScene = cc.Scene.extend({
         this.addChild(slime);
         var slime_yellow = new slime_yellow_Layer();
         this.addChild(slime_yellow);
-        var Lcurtain = new LcurtainLayer();
-        this.addChild(Lcurtain);
-        var Rcurtain = new RcurtainLayer();
-        this.addChild(Rcurtain);
-        var ui_panels = new ui_panelsLayer();
-        this.addChild(ui_panels);
+        var slime_yellow = new slime_red_Layer();
+        this.addChild(slime_red);
+
+
     }
 });
 
@@ -61,6 +67,20 @@ var backgroundLayer = cc.Layer.extend({
         backgroundSprite.setPosition(winSize.width / 2, winSize.height / 2);
         //背景画像を画面の大きさに合わせるためのScaling処理
         backgroundSprite.setScale(winSize.width / size.width, winSize.height / size.height);
+    }
+});
+var background_light_shaftsLayer = cc.Layer.extend({
+    ctor: function() {
+        this._super();
+
+        var background_light_shaftsSprite = cc.Sprite.create(res.background_light_shafts_png);
+        var size = background_light_shaftsSprite.getContentSize();
+        //console.log(size);
+        this.addChild(background_light_shaftsSprite);
+        //console.log(winSize.width,winSize.height);
+        background_light_shaftsSprite.setPosition(winSize.width / 2, winSize.height / 2);
+        //背景画像を画面の大きさに合わせるためのScaling処理
+        background_light_shaftsSprite.setScale(winSize.width / size.width, winSize.height / size.height);
     }
 });
 
