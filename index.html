@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Action Game Sample</title>
     <script type="text/javascript" src="cocos2d-js-v3.11.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/resource.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/title.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/EnemyBat.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/EnemyBut2.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/zombie.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/slime_green.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/slime_yellow.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/slime_red.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/coin.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/coin2.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/coin3.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/coin4.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/coin5.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/coin6.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/ui_gauge_fill.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/ui_gauge_fill2.js" charset="UTF-8"></script>
     <script type="text/javascript" src="src/app.js" charset="UTF-8"></script>
 </head>
+
 <body>
-    <canvas id="gameCanvas" ></canvas>
+    <canvas id="gameCanvas"></canvas>
     <script type="text/javascript">
-          window.onload = function(){
-              cc.game.onStart = function(){
-                  //load resources
-                  // プログラムの画面全体を表示領域の画面に合わせる　Adjust viewport meta
-                   cc.view.adjustViewPort(true);
+        window.onload = function() {
+            cc.game.onStart = function() {
+                //load resources
+                // プログラムの画面全体を表示領域の画面に合わせる　Adjust viewport meta
+                cc.view.adjustViewPort(true);
 
-                  //画面の縦横比をドットで指定する  ターゲットの解像度を指定し、ゲームキャンバスをブラウザのウインドサイズに合わせる
-                  cc.view.setDesignResolutionSize(960,640,  cc.ResolutionPolicy.SHOW_ALL);
-                  // 表示領域がリサイズされた場合、自動的にプログラムの画面をリサイズさせる
-                  cc.view.resizeWithBrowserSize(true);
+                //画面の縦横比をドットで指定する  ターゲットの解像度を指定し、ゲームキャンバスをブラウザのウインドサイズに合わせる
+                cc.view.setDesignResolutionSize(960, 640, cc.ResolutionPolicy.SHOW_ALL);
+                // 表示領域がリサイズされた場合、自動的にプログラムの画面をリサイズさせる
+                cc.view.resizeWithBrowserSize(true);
 
-                  cc.LoaderScene.preload(g_resources, function () {
-                       cc.director.runScene(new gameScene());
-                  }, this);
-              };
-              cc.game.run("gameCanvas");
-          };
+                cc.LoaderScene.preload(g_resources, function() {
+                    cc.director.runScene(new TitleScene());
+                }, this);
+            };
+            cc.game.run("gameCanvas");
+        };
     </script>
 </body>
+
 </html>

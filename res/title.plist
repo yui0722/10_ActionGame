@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>frames</key>
+        <dict>
+            <key>title01</key>
+            <dict>
+                <key>frame</key>
+                <string>{{0,385},{180,125}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceSize</key>
+                <string>{96,96}</string>
+            </dict>
+            
+            <key>title02</key>
+            <dict>
+                <key>frame</key>
+                <string>{{200,385},{180,125}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceSize</key>
+                <string>{96,96}</string>
+            </dict>
+            
+            <key>title03</key>
+            <dict>
+                <key>frame</key>
+                <string>{{400,385},{180,125}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceSize</key>
+                <string>{96,96}</string>
+            </dict>
+            
+            <key>title04</key>
+            <dict>
+                <key>frame</key>
+                <string>{{600,385},{180,125}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceSize</key>
+                <string>{96,96}</string>
+            </dict>
+            <key>title05</key>
+            <dict>
+                <key>frame</key>
+                <string>{{200,385},{180,125}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceSize</key>
+                <string>{96,96}</string>
+            </dict>
+        </dict>
+        <key>metadata</key>
+        <dict>
+            <key>format</key>
+            <integer>2</integer>
+        </dict>
+    </dict>
+</plist>

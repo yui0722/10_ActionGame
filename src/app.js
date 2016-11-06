@@ -1,10 +1,10 @@
 var size;
 //1:地面　2:ブロック　3:プレイヤ　4:ゾンビ 5:こうもり 6:コイン 7:スライム(緑)
 var level = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 5],
-    [0, 0, 0, 0, 0, 0, 2, 2, 2, 0],
-    [0, 6, 6, 0, 0, 0, 0, 0, 0, 0],
+    [0, 16, 0, 17, 0, 0, 0, 0, 0, 0],
+    [10, 0, 0, 0, 0, 0, 0, 0, 0, 5],
+    [0, 0, 0, 0, 14, 15, 2, 2, 2, 0],
+    [0, 6, 11, 0, 0, 0, 0, 12, 13, 0],
     [0, 0, 0, 2, 2, 2, 0, 0, 0, 0],
     [0, 7, 0, 0, 3, 0, 0, 8, 4, 9],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
@@ -31,6 +31,10 @@ var gameScene = cc.Scene.extend({
         this.addChild(Rcurtain);
         var Lcurtain = new LcurtainLayer();
         this.addChild(Lcurtain);
+        var ui_gauge_fill = new ui_gauge_fillLayer();
+        this.addChild(ui_gauge_fill);
+        var ui_gauge_fill2 = new ui_gauge_fillLayer2();
+        this.addChild(ui_gauge_fill2);
         var ui_panels = new ui_panelsLayer();
         this.addChild(ui_panels);
         var level = new levelLayer();
@@ -39,10 +43,22 @@ var gameScene = cc.Scene.extend({
         this.addChild(player);
         var enemys = new enemyLayer();
         this.addChild(enemys);
+        var enemys2 = new enemyLayer2();
+        this.addChild(enemys2);
         var zombie = new zombieLayer();
         this.addChild(zombie);
         var coins = new coinsLayer();
         this.addChild(coins);
+        var coins2 = new coinsLayer2();
+        this.addChild(coins2);
+        var coins3 = new coinsLayer3();
+        this.addChild(coins3);
+        var coins4 = new coinsLayer4();
+        this.addChild(coins4);
+        var coins5 = new coinsLayer5();
+        this.addChild(coins5);
+        var coins6 = new coinsLayer6();
+        this.addChild(coins6);
         var slime = new slimeLayer();
         this.addChild(slime);
         var slime_yellow = new slime_yellow_Layer();
@@ -50,6 +66,11 @@ var gameScene = cc.Scene.extend({
         var slime_yellow = new slime_red_Layer();
         this.addChild(slime_red);
 
+        scorelabel_1 = new cc.LabelTTF("0", "あんずもじ奏", 25);
+               scorelabel_1.setPosition(cc.p(winSize.width - 200, winSize.height - 70));
+               scorelabel_1.fillStyle = "black";
+               scorelabel_1.setScale(2.0);
+               this.addChild(scorelabel_1);
 
     }
 });

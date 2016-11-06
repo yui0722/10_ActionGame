@@ -1,17 +1,17 @@
-var ui_gauge_fill;
+var ui_gauge_fill2;
 
-var ui_gauge_fillLayer = cc.Layer.extend({
+var ui_gauge_fillLayer2 = cc.Layer.extend({
     ctor: function() {
         this._super();
-        ui = new ui_gauge_fill();
-        this.addChild(ui);
+        ui2 = new ui_gauge_fill2();
+        this.addChild(ui2);
 
         //cc.eventManager.addListener(listener, this);
 
     }
 
 });
-var ui_gauge_fill = cc.Sprite.extend({
+var ui_gauge_fill2 = cc.Sprite.extend({
     ctor: function() {
         this._super();
         this.initWithFile(res.ui_gauge_fill_png);
@@ -19,16 +19,16 @@ var ui_gauge_fill = cc.Sprite.extend({
 
         for (i = 0; i < 7; i++) {　　　　　　
             for (j = 0; j < 10; j++) {
-                if (level[i][j] == 16) {
-                    this.setPosition(tileSize + 80 , tileSize + 480);
+                if (level[i][j] == 17) {
+                    this.setPosition(tileSize + 400 , tileSize + 480);
                 }
             }
         }
 
         // スプライトシートをキャッシュに登録
-        cc.spriteFrameCache.addSpriteFrames(res.ui_plist, res.ui_gauge_fill_png);
+        cc.spriteFrameCache.addSpriteFrames(res.ui_plist2, res.ui_gauge_fill_png);
 
-        var frame1 = cc.spriteFrameCache.getSpriteFrame("ui01");
+        var frame1 = cc.spriteFrameCache.getSpriteFrame("ui02");
 
         //スプライトフレームを配列に登録
         var animationframe = [];
