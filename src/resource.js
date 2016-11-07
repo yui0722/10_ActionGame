@@ -23,6 +23,7 @@ var res = {
     ui_gauge_fill_png: "res/ui_gauge_fill.png",
     ui_plist: "res/ui.plist",
     ui_plist2: "res/ui2.plist",
+    ui_plist3: "res/ui3.plist",
 
     player_sheet: "res/sir_awesome_frames.png",
     player_plist: "res/player.plist",

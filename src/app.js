@@ -1,7 +1,7 @@
 var size;
 //1:地面　2:ブロック　3:プレイヤ　4:ゾンビ 5:こうもり 6:コイン 7:スライム(緑)
 var level = [
-    [0, 16, 0, 17, 0, 0, 0, 0, 0, 0],
+    [0, 16, 0, 17, 0, 18, 0, 0, 0, 0],
     [10, 0, 0, 0, 0, 0, 0, 0, 0, 5],
     [0, 0, 0, 0, 14, 15, 2, 2, 2, 0],
     [0, 6, 11, 0, 0, 0, 0, 12, 13, 0],
@@ -23,9 +23,9 @@ var gameScene = cc.Scene.extend({
         this._super();
 
         //音楽再生エンジン
-       audioEngine = cc.audioEngine;
+        audioEngine = cc.audioEngine;
         //bgm再生
-      if (!audioEngine.isMusicPlaying()) {
+        if (!audioEngine.isMusicPlaying()) {
             //audioEngine.playMusic("res/bgm_main.mp3", true);
             audioEngine.playMusic(res.bgm_main, true);
         }
@@ -44,6 +44,8 @@ var gameScene = cc.Scene.extend({
         this.addChild(ui_gauge_fill);
         var ui_gauge_fill2 = new ui_gauge_fillLayer2();
         this.addChild(ui_gauge_fill2);
+        var ui_gauge_fill3 = new ui_gauge_fillLayer3();
+        this.addChild(ui_gauge_fill3);
         var ui_panels = new ui_panelsLayer();
         this.addChild(ui_panels);
         var level = new levelLayer();
@@ -76,10 +78,10 @@ var gameScene = cc.Scene.extend({
         this.addChild(slime_red);
 
         scorelabel_1 = new cc.LabelTTF("0", "あんずもじ奏", 25);
-               scorelabel_1.setPosition(cc.p(winSize.width - 200, winSize.height - 70));
-               scorelabel_1.fillStyle = "black";
-               scorelabel_1.setScale(2.0);
-               this.addChild(scorelabel_1);
+        scorelabel_1.setPosition(cc.p(winSize.width - 200, winSize.height - 70));
+        scorelabel_1.fillStyle = "black";
+        scorelabel_1.setScale(2.0);
+        this.addChild(scorelabel_1);
 
     }
 });
@@ -123,7 +125,7 @@ var ui_panelsLayer = cc.Layer.extend({
         //console.log(size);
         this.addChild(ui_panelsSprite);
         //console.log(winSize.width,winSize.height);
-        ui_panelsSprite.setPosition(winSize.width / 2, winSize.height/ 0.9);
+        ui_panelsSprite.setPosition(winSize.width / 2, winSize.height / 0.9);
     }
 });
 
