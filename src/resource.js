@@ -7,7 +7,7 @@ var res = {
 
     title_png: "res/title.png",
     title_plist: "res/title.plist",
-    start_png: "res/btn_play.png",
+    start_png: "res/ts.png",
     sparkle_frames_png: "res/sparkle_frames.png",
 
     block_png: "res/block48X48.png",
