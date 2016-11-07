@@ -16,10 +16,19 @@ var leftBtn; //左ボタン
 var rightBtn; //右ボタン
 var jumpBtn; //ジャンプ
 var winSize;
+var audioEngine;
 
 var gameScene = cc.Scene.extend({
     onEnter: function() {
         this._super();
+
+        //音楽再生エンジン
+       audioEngine = cc.audioEngine;
+        //bgm再生
+      if (!audioEngine.isMusicPlaying()) {
+            //audioEngine.playMusic("res/bgm_main.mp3", true);
+            audioEngine.playMusic(res.bgm_main, true);
+        }
 
         winSize = cc.director.getWinSize();
 

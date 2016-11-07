@@ -39,6 +39,7 @@ var res = {
     slime_yellow_plist: "res/slime_yellow.plist",
     slime_red_plist: "res/slime_red.plist",
 
+    bgm_main: "res/nc104499.mp3",
 
 
 };
